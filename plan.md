@@ -31,7 +31,7 @@ Visitor → talk-edit.com → Cloudflare Pages
 - [x] **Sections:**
   - Hero: tagline + "Download Beta" CTA
   - Features: 3x2 cards (long-form, offline, AI-powered, one-time price, keyboard-driven, export)
-  - Pricing: 7-day free trial / Pro $39 / Business $79
+  - Pricing: 7-day free trial / Pro $49 / Business $99 (Pro→Business upgrade for $50)
   - Download: Linux AppImage + .deb buttons
   - FAQ: trial terms, offline requirement, refund policy
   - Footer: email contact, social links
@@ -47,7 +47,7 @@ Visitor → talk-edit.com → Cloudflare Pages
 ### Step 3: Set up Stripe
 
 - [ ] Create Stripe account (or use existing)
-- [ ] Create two products: Pro ($39 one-time), Business ($79 one-time)
+- [ ] Create two products: Pro ($49 one-time), Business ($99 one-time)
 - [ ] Generate Stripe Checkout links
 - [ ] Wire "Buy" buttons on landing page to Checkout links
 
