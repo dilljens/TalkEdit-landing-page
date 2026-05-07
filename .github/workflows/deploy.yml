@@ -19,27 +19,3 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: d9b6c3059be77c9f44b5ec7365fa50b8
-      - name: Download latest release assets
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          mkdir -p /tmp/assets
-          gh release download v0.1.0 \
-            --repo dilljens/TalkEdit \
-            --dir /tmp/assets
-      - name: Upload assets to R2
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: d9b6c3059be77c9f44b5ec7365fa50b8
-        run: |
-          BUCKET=$(npx wrangler r2 bucket list 2>/dev/null | grep -oE '\S+' | tail -1)
-          if [ -z "$BUCKET" ]; then
-            echo "No R2 bucket found, skipping R2 upload"
-            exit 0
-          fi
-          echo "Uploading to R2 bucket: $BUCKET"
-          for f in /tmp/assets/*; do
-            name=$(basename "$f")
-            echo "  Uploading $name..."
-            npx wrangler r2 object put "$BUCKET/$name" --file "$f" || echo "  Failed to upload $name"
-          done
