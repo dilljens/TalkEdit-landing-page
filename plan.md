@@ -31,7 +31,7 @@ Visitor → talk-edit.com → Cloudflare Pages
 - [x] **Sections:**
   - Hero: tagline + "Download Beta" CTA
   - Features: 3x2 cards (long-form, offline, AI-powered, one-time price, keyboard-driven, export)
-  - Pricing: 7-day free trial / Pro $39 / Business $79
+  - Pricing: 7-day free trial / Pro $49 / Business $99 (Pro→Business upgrade for $50)
   - Download: Linux AppImage + .deb buttons
   - FAQ: trial terms, offline requirement, refund policy
   - Footer: email contact, social links
@@ -47,14 +47,16 @@ Visitor → talk-edit.com → Cloudflare Pages
 ### Step 3: Set up Stripe
 
 - [ ] Create Stripe account (or use existing)
-- [ ] Create two products: Pro ($39 one-time), Business ($79 one-time)
-- [ ] Generate Stripe Checkout links
-- [ ] Wire "Buy" buttons on landing page to Checkout links
+- [x] Create two products: Pro ($49 one-time), Business ($99 one-time)
+- [x] Generate Stripe Checkout links
+- [x] Wire "Buy" buttons on landing page to Checkout links
 
-### Step 4: License key delivery (simple first)
+### Step 4: License key delivery (automated)
 
-- [ ] **Manual (beta):** Stripe sends receipt email, you email license key manually. Fine for low volume.
-- [ ] **Later:** Cloudflare Pages Function receives `checkout.session.completed` webhook → generates license key (`base64(hmac(email + tier + timestamp, secret))`) → emails via SendGrid/Resend
+- [x] Cloudflare Pages Function at `/api/stripe-webhook` receives `checkout.session.completed` webhook
+- [x] Generates Ed25519-signed license key using `@noble/ed25519`
+- [x] Emails license key via Resend API
+- [ ] **Setup required:** Configure Cloudflare secrets and Stripe webhook (see instructions below)
 
 ### Step 5: Distribution
 
