@@ -10,7 +10,28 @@
   <meta property="og:image" content="https://talk-edit.com/og-image.png" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TalkEdit — Offline Video Editor for Long-Form Content" />
+  <meta name="twitter:description" content="Edit video by editing text. Fully offline, one-time purchase. AI-powered editing for podcasters and long-form creators." />
+  <meta property="og:url" content="https://talk-edit.com" />
+  <meta name="keywords" content="video editor, offline video editor, AI video editor, text-based editing, podcast editor, long-form video, transcription editor" />
+  <link rel="canonical" href="https://talk-edit.com" />
   <link rel="icon" type="image/png" href="favicon.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "TalkEdit",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Windows, macOS, Linux",
+    "description": "Edit video by editing text. Fully offline video editor with AI-powered features for podcasters and long-form creators.",
+    "offers": {
+      "@type": "Offer",
+      "price": "49.00",
+      "priceCurrency": "USD",
+      "description": "One-time purchase"
+    }
+  }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -59,7 +80,7 @@
       <div class="flex items-center gap-3 sm:gap-6">
         <a href="#features" class="text-editor-text-muted hover:text-editor-text transition text-sm hidden sm:inline">Features</a>
         <a href="#pricing" class="text-editor-text-muted hover:text-editor-text transition text-sm hidden sm:inline">Pricing</a>
-        <a href="#download" class="inline-flex items-center gap-2 bg-editor-accent hover:bg-editor-accent-hover text-white px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition whitespace-nowrap">Download Beta</a>
+        <a href="#download" class="inline-flex items-center gap-2 bg-editor-accent hover:bg-editor-accent-hover text-white px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition whitespace-nowrap">Download</a>
       </div>
     </div>
   </nav>
@@ -69,7 +90,7 @@
     <div class="max-w-4xl mx-auto text-center">
       <div class="inline-flex items-center gap-2 bg-editor-accent/10 text-editor-accent px-4 py-1.5 rounded-full text-sm font-medium mb-8">
         <span class="w-2 h-2 rounded-full bg-editor-accent animate-pulse"></span>
-        Beta now available — free 7-day trial
+        Free 7-day trial — no credit card required
       </div>
       <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
         Edit video by<br />
@@ -81,7 +102,7 @@
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a href="#download" class="inline-flex items-center gap-2 bg-editor-accent hover:bg-editor-accent-hover text-white px-8 py-3.5 rounded-xl text-lg font-semibold transition glow">
-          Download Beta
+          Download Free
         </a>
         <a href="#features" class="inline-flex items-center gap-2 text-editor-text-muted hover:text-editor-text px-8 py-3.5 rounded-xl text-lg font-medium transition border border-editor-border hover:border-editor-text-muted">
           See Features
@@ -334,10 +355,10 @@
         </details>
         <details class="group bg-editor-surface border border-editor-border rounded-xl p-5 open:border-editor-accent transition">
           <summary class="flex items-center justify-between cursor-pointer font-medium">
-            Will there be Windows and macOS versions?
+            Which platforms are supported?
             <svg class="w-5 h-5 text-editor-text-muted group-open:rotate-180 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
-          <p class="mt-4 text-editor-text-muted text-sm leading-relaxed">Yes. Beta is Linux-first, but the app is built with Tauri which supports all three platforms. Windows and macOS builds will follow based on beta demand.</p>
+          <p class="mt-4 text-editor-text-muted text-sm leading-relaxed">Windows, macOS (Apple Silicon), and Linux. Download the right build for your platform above. All three are fully supported with the same features.</p>
         </details>
         <details class="group bg-editor-surface border border-editor-border rounded-xl p-5 open:border-editor-accent transition">
           <summary class="flex items-center justify-between cursor-pointer font-medium">
