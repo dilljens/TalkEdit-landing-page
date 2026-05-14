@@ -291,7 +291,7 @@
   <section id="download" class="py-20 px-6">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Get TalkEdit</h2>
-      <p class="text-lg text-editor-text-muted mb-10">Beta v0.2.5 — Linux, Windows, macOS. Free 7-day trial.</p>
+      <p class="text-lg text-editor-text-muted mb-10">Beta <span id="version">v0.2.5</span> — Linux, Windows, macOS. Free 7-day trial.</p>
       <div class="flex flex-wrap items-center justify-center gap-4">
         <a href="https://pub-1318c18d2a524a0a9cda209ceb60cdee.r2.dev/TalkEdit_latest_x64_en-US.msi" class="inline-flex items-center gap-2 bg-editor-accent hover:bg-editor-accent-hover text-white px-6 py-3 rounded-xl text-base font-semibold transition glow">
           <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
@@ -388,5 +388,18 @@
     </div>
   </footer>
 
+  <script>
+    // Fetch latest release version from GitHub
+    (async () => {
+      try {
+        const res = await fetch('https://api.github.com/repos/dilljens/TalkEdit/releases/latest');
+        if (res.ok) {
+          const data = await res.json();
+          const tag = data.tag_name;
+          document.getElementById('version').textContent = tag;
+        }
+      } catch {}
+    })();
+  </script>
 </body>
 </html>
