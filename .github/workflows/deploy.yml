@@ -21,7 +21,7 @@ jobs:
       - name: Fetch latest version tag
         id: version
         run: |
-          TAG="v0.2.9"
+          TAG="v0.2.21"
           if [ -n "${{ github.event.inputs.version }}" ]; then
             TAG="${{ github.event.inputs.version }}"
           fi
