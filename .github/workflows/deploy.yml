@@ -32,7 +32,7 @@ jobs:
           echo "Using version: $TAG"
           sed -i "s/Beta v[0-9.]\+/Beta $TAG/" index.html
       - name: Install dependencies
-        run: npm ci
+        run: npm install
       - name: Install Wrangler
         run: npm install -g wrangler
       - name: Deploy to Pages
