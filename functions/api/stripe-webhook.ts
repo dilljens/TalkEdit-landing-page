@@ -6,12 +6,30 @@
 //   LICENSE_PRIVATE_KEY    — Ed25519 private key (hex) for signing licenses
 //   LICENSE_SENDER_EMAIL   — From address for license emails
 //
-// Stripe products:
-//   Pro:     price_1RQFclP78vm6Q5n6HW3bb83C  → 49 USD
-//   Business: price_1RQFdEP78vm6Q5n6fK2XxgGC → 99 USD
+// Stripe products (update lookup_keys when prices change):
+//   Pro:                    price_1RQFclP78vm6Q5n6HW3bb83C  → 49 USD,  lookup_key: 'pro'
+//   Business:               price_1RQFdEP78vm6Q5n6fK2XxgGC → 99 USD,  lookup_key: 'business'
+//   Pro→Business upgrade:  TODO: create in Stripe dashboard  → 50 USD,  lookup_key: 'pro_to_business_upgrade'
+//
+// To create the upgrade price:
+// 1. Stripe Dashboard → Products → Create Product "Pro to Business Upgrade"
+// 2. One-time price: $50 USD, set lookup_key = 'pro_to_business_upgrade'
+// 3. After creation, copy the price_xxx ID and its Buy link
+// 4. Update landing page "Pro users upgrade for $50" link to point to the new Checkout URL
+// 5. Update this comment with the price_xxx ID
+//
+// License key format (Rust expects):
+//   talkedit_v1_{base64(license_payload_json)}.{base64(ed25519_signature)}
 
-import { etc } from '@noble/ed25519';
-const { hexToBytes, bytesToHex } = etc;
+import { etc, signAsync } from '@noble/ed25519';
+const { hexToBytes, randomBytes } = etc;
+
+// Base64 encode without padding (matches Rust's STANDARD_NO_PAD)
+function b64encode(bytes: Uint8Array): string {
+  let bin = '';
+  for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+  return btoa(bin).replace(/=+$/, '');
+}
 
 interface Env {
   STRIPE_WEBHOOK_SECRET: string;
@@ -20,11 +38,21 @@ interface Env {
   LICENSE_SENDER_EMAIL: string;
 }
 
+// License payload matching Rust's LicensePayload struct
+interface LicensePayload {
+  license_id: string;
+  customer_email: string;
+  tier: string;
+  features: string[];
+  issued_at: number;
+  expires_at: number;
+  max_activations: number;
+}
+
 export const onRequest: PagesFunction<Env> = async (context) => {
   const request = context.request;
   const env = context.env;
 
-  // Only accept POST
   if (request.method !== 'POST') {
     return new Response('Method not allowed', { status: 405 });
   }
@@ -49,8 +77,8 @@ export const onRequest: PagesFunction<Env> = async (context) => {
     }
 
     // Verify Stripe webhook signature using HMAC
-    const stripeSecret = env.STRIPE_WEBHOOK_SECRET;
     const encoder = new TextEncoder();
+    const stripeSecret = env.STRIPE_WEBHOOK_SECRET;
     const key = await crypto.subtle.importKey(
       'raw',
       encoder.encode(stripeSecret),
@@ -59,8 +87,7 @@ export const onRequest: PagesFunction<Env> = async (context) => {
       ['verify']
     );
 
-    // Parse the Stripe signature header
-    // Format: t=timestamp,v1=signature
+    // Parse the Stripe signature header: t=timestamp,v1=signature
     const parts = signature.split(',').reduce<Record<string, string>>((acc, part) => {
       const [k, ...v] = part.split('=');
       acc[k.trim()] = v.join('=');
@@ -77,20 +104,15 @@ export const onRequest: PagesFunction<Env> = async (context) => {
     const signedPayload = `${timestamp}.${body}`;
     const sigBytes = hexToBytes(sig);
     const valid = await crypto.subtle.verify(
-      'HMAC',
-      key,
-      sigBytes,
-      encoder.encode(signedPayload)
+      'HMAC', key, sigBytes, encoder.encode(signedPayload)
     );
 
     if (!valid) {
       return new Response('Invalid signature', { status: 400 });
     }
 
-    // Parse the event
     const event = JSON.parse(body);
 
-    // We only process checkout.session.completed
     if (event.type !== 'checkout.session.completed') {
       return new Response(`Unhandled event type: ${event.type}`, { status: 200 });
     }
@@ -104,34 +126,41 @@ export const onRequest: PagesFunction<Env> = async (context) => {
       return new Response('No customer email', { status: 400 });
     }
 
-    // Determine license tier from line items or metadata
+    // Determine license tier from line items lookup_keys
     const lineItems = session?.lines?.data || [];
-    const isBusiness = lineItems.some((item: any) =>
-      item.price?.lookup_key === 'business' ||
-      item.description?.toLowerCase().includes('business')
-    );
+    const lookupKeys = lineItems.map((item: any) => item.price?.lookup_key).filter(Boolean);
+    const isUpgrade = lookupKeys.includes('pro_to_business_upgrade');
+    const isBusiness = lookupKeys.includes('business') || isUpgrade;
+
     const tier = isBusiness ? 'business' : 'pro';
+    const features = isBusiness
+      ? ['bundled_deps', 'auto_updates', 'bg_removal', 'ai_editing']
+      : ['bundled_deps', 'auto_updates'];
 
-    // Generate license key
-    const privateKeyBytes = hexToBytes(env.LICENSE_PRIVATE_KEY);
-    const licenseData = JSON.stringify({
-      email: customerEmail,
+    // Build license payload matching Rust's LicensePayload struct
+    const now = Math.floor(Date.now() / 1000);
+    const payload: LicensePayload = {
+      license_id: `talkedit_${session.id}`,
+      customer_email: customerEmail,
       tier,
-      issued: new Date().toISOString(),
-      sessionId: session.id,
-    });
-
-    // Sign with Ed25519
-    const { sign } = await import('@noble/ed25519');
-    const signatureBytes = await sign(encoder.encode(licenseData), privateKeyBytes);
-    const licenseKey = bytesToHex(signatureBytes);
-
-    // Build the full license payload (base64 encoded for easy copying)
-    const licensePayload = {
-      key: licenseKey,
-      data: licenseData,
+      features,
+      issued_at: now,
+      expires_at: now + 365 * 86400,  // 1 year license
+      max_activations: 3,
     };
-    const encodedLicense = btoa(JSON.stringify(licensePayload));
+
+    // Sign with Ed25519 — use async API (sync requires sha512Sync which isn't available in Workers)
+    const privateKeyBytes = hexToBytes(env.LICENSE_PRIVATE_KEY);
+    const payloadBytes = encoder.encode(JSON.stringify(payload));
+    const signatureBytes = await signAsync(payloadBytes, privateKeyBytes);
+
+    // Build license key: talkedit_v1_{base64(payload)}.{base64(signature)}
+    const payloadB64 = b64encode(new Uint8Array(payloadBytes));
+    const sigB64 = b64encode(new Uint8Array(signatureBytes));
+    const licenseKey = `talkedit_v1_${payloadB64}.${sigB64}`;
+
+    // Determine display tier for email
+    const tierName = tier === 'business' ? 'Business' : 'Pro';
 
     // Send license email via Resend
     const emailResponse = await fetch('https://api.resend.com/emails', {
@@ -143,14 +172,17 @@ export const onRequest: PagesFunction<Env> = async (context) => {
       body: JSON.stringify({
         from: env.LICENSE_SENDER_EMAIL,
         to: customerEmail,
-        subject: `Your TalkEdit ${tier === 'business' ? 'Business' : 'Pro'} License Key`,
+        subject: `Your TalkEdit ${tierName} License Key`,
         html: `
           <div style="font-family: sans-serif; max-width: 480px; margin: 0 auto;">
             <h1 style="color: #6366f1;">TalkEdit License</h1>
             <p>Hi ${customerName},</p>
-            <p>Thank you for purchasing TalkEdit <strong>${tier === 'business' ? 'Business' : 'Pro'}</strong>!</p>
+            ${isUpgrade
+              ? `<p>Your license has been <strong>upgraded to TalkEdit Business</strong>!</p>`
+              : `<p>Thank you for purchasing TalkEdit <strong>${tierName}</strong>!</p>`
+            }
             <p>Your license key is:</p>
-            <pre style="background: #f4f4f5; padding: 16px; border-radius: 8px; font-size: 14px; word-break: break-all;">${encodedLicense}</pre>
+            <pre style="background: #f4f4f5; padding: 16px; border-radius: 8px; font-size: 12px; word-break: break-all; line-height: 1.6;">${licenseKey}</pre>
             <p>To activate:</p>
             <ol>
               <li>Open TalkEdit</li>
@@ -168,10 +200,9 @@ export const onRequest: PagesFunction<Env> = async (context) => {
     if (!emailResponse.ok) {
       const emailError = await emailResponse.text();
       console.error('Failed to send license email:', emailError);
-      // Don't fail the webhook — the license was still generated
     }
 
-    console.log(`License delivered: ${customerEmail} (${tier})`);
+    console.log(`License delivered: ${customerEmail} (${tier})${isUpgrade ? ' [upgrade]' : ''}`);
     return new Response(JSON.stringify({ ok: true }), {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
