@@ -47,13 +47,17 @@
     "featureList": [
       "Text-based video editing",
       "AI transcription with speaker diarization",
-      "Animated captions (TikTok-style)",
+      "Animated captions (TikTok-style) with presets",
       "AI chat assistant with action execution",
       "Smart Clean: one-click audio cleanup",
       "Filler word removal",
       "Local text-to-speech (31 languages)",
       "Background music with auto-ducking",
       "Noise reduction and loudness normalization",
+      "Background removal (MediaPipe)",
+      "Video zoom and punch-in",
+      "Custom transcription glossary",
+      "Audio crossfade at cut points",
       "Export to MP4, MOV, WebM, WAV"
     ]
   }
@@ -204,7 +208,7 @@
             <svg class="w-5 h-5 text-editor-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"/></svg>
           </div>
           <h3 class="font-semibold text-lg mb-2">Export how you want</h3>
-          <p class="text-editor-text-muted text-sm leading-relaxed">MP4, MOV, WebM, WAV — up to 4K. Animated captions, chapters, background music with auto-ducking, stream-copy export in seconds.</p>
+          <p class="text-editor-text-muted text-sm leading-relaxed">MP4, MOV, WebM, WAV — up to 4K. Background removal, video zoom, animated captions, chapters, background music with auto-ducking, crossfade at cuts, and plain-text transcript export. Fast stream-copy for unchanged segments.</p>
         </div>
 
         <div class="col-span-full mt-8 animate-in">
@@ -217,7 +221,7 @@
             <svg class="w-5 h-5 text-editor-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
           </div>
           <h3 class="font-semibold text-lg mb-2">AI-powered editing</h3>
-          <p class="text-editor-text-muted text-sm leading-relaxed">Filler removal, Smart Clean, rephrases, social clips, and show notes. Local Ollama or cloud OpenAI/Claude.</p>
+          <p class="text-editor-text-muted text-sm leading-relaxed">Filler removal, Smart Clean, rephrases, social clips, and show notes. Custom transcription glossary improves accuracy for domain terms. Re-transcribe with a different Whisper model anytime.</p>
         </div>
 
         <div class="feature-card bg-editor-surface/90 backdrop-blur-sm border border-editor-border rounded-xl p-6 transition animate-in">
@@ -233,7 +237,7 @@
             <svg class="w-5 h-5 text-editor-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
           </div>
           <h3 class="font-semibold text-lg mb-2">Smart Clean</h3>
-          <p class="text-editor-text-muted text-sm leading-relaxed">One-click audio: filler removal + silence trim + noise reduction + normalize. Presets for Podcast, Interview, Social, and Presentation.</p>
+          <p class="text-editor-text-muted text-sm leading-relaxed">One-click audio: filler removal + silence trim + noise reduction + normalize. Presets for Podcast, Interview, Social, and Presentation. Studio Sound enhancement during export for professional-grade audio.</p>
         </div>
 
         <div class="col-span-full mt-8 animate-in">
@@ -246,7 +250,7 @@
             <svg class="w-5 h-5 text-editor-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
           </div>
           <h3 class="font-semibold text-lg mb-2">Animated Captions</h3>
-          <p class="text-editor-text-muted text-sm leading-relaxed">Burn in TikTok-style word-by-word captions with customizable style, color, and animation. Export as SRT, VTT, or ASS subtitles.</p>
+          <p class="text-editor-text-muted text-sm leading-relaxed">Burn in TikTok-style word-by-word captions with presets (TikTok, YouTube, Clean) or full manual customization. Export with video or as SRT, VTT, ASS, or plain TXT transcripts.</p>
         </div>
 
         <div class="feature-card bg-editor-surface/90 backdrop-blur-sm border border-editor-border rounded-xl p-6 transition animate-in">
@@ -510,6 +514,20 @@
               <td class="text-center py-4 px-4 text-editor-text-muted">Cloud only</td>
               <td class="text-center py-4 px-4 text-editor-text-muted">&mdash;</td>
               <td class="text-center py-4 px-4 text-editor-text-muted">Cloud only</td>
+            </tr>
+            <tr class="border-b border-editor-border/50">
+              <td class="py-4 pr-6 text-editor-text-muted">Background removal</td>
+              <td class="text-center py-4 px-4"><span class="text-editor-success font-semibold">Built-in</span></td>
+              <td class="text-center py-4 px-4 text-editor-text-muted">&mdash;</td>
+              <td class="text-center py-4 px-4 text-editor-text-muted">Manual</td>
+              <td class="text-center py-4 px-4 text-editor-text-muted">&mdash;</td>
+            </tr>
+            <tr class="border-b border-editor-border/50">
+              <td class="py-4 pr-6 text-editor-text-muted">Audio crossfade</td>
+              <td class="text-center py-4 px-4"><span class="text-editor-success font-semibold">Yes</span></td>
+              <td class="text-center py-4 px-4 text-editor-text-muted">&mdash;</td>
+              <td class="text-center py-4 px-4 text-editor-text-muted">&mdash;</td>
+              <td class="text-center py-4 px-4 text-editor-text-muted">&mdash;</td>
             </tr>
             <tr>
               <td class="py-4 pr-6 text-editor-text-muted">Auto-updater</td>
