@@ -31,7 +31,75 @@
       "price": "49.00",
       "priceCurrency": "USD",
       "description": "One-time purchase"
-    }
+    },
+    "featureList": [
+      "Text-based video editing",
+      "AI transcription with speaker diarization",
+      "Animated captions (TikTok-style)",
+      "AI chat assistant with action execution",
+      "Smart Clean: one-click audio cleanup",
+      "Filler word removal",
+      "Local text-to-speech (31 languages)",
+      "Background music with auto-ducking",
+      "Noise reduction and loudness normalization",
+      "Export to MP4, MOV, WebM, WAV"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is it really 100% offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Transcription, AI features, and export all run locally. No data ever leaves your machine. No account required. The only time it touches the network is downloading Whisper models (optional) or if you connect to a local Ollama instance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long can my videos be?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TalkEdit handles hour+ files without issue. The transcript uses virtualized rendering and the waveform uses chunked loading — no lag, no crashes. We regularly test with 2-3 hour podcast recordings."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the refund policy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "30-day money-back guarantee, no questions asked. If TalkEdit doesn't work for you, email us and you'll get a full refund."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What formats are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Input: MP4, MKV, MOV, AVI, WebM, M4A. Export: MP4 (H.264/H.265), MOV, WebM, WAV. Captions: SRT, VTT, ASS. Resolutions from 720p to 4K."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which platforms are supported?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Windows, macOS (Apple Silicon), and Linux. All three platforms are fully supported with the same features."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a powerful GPU?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Transcription works on CPU (slower but usable). GPU (CUDA) speeds it up significantly. AI features use lightweight models that run on any modern machine with 8GB+ RAM."
+        }
+      }
+    ]
   }
   </script>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -92,7 +160,7 @@
     <div class="max-w-4xl mx-auto text-center">
       <div class="inline-flex items-center gap-2 bg-editor-accent/10 text-editor-accent px-4 py-1.5 rounded-full text-sm font-medium mb-8">
         <span class="w-2 h-2 rounded-full bg-editor-accent animate-pulse"></span>
-        Free 7-day trial — no credit card required
+        Free 7-day trial &middot; 30-day guarantee &middot; no credit card
       </div>
       <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
         Edit video by<br />
@@ -110,6 +178,19 @@
           See Features
         </a>
       </div>
+      <p class="text-xs text-editor-text-muted/60 mt-3">30-day money-back guarantee on all purchases</p>
+      </div>
+
+      <!-- Hero image / video placeholder -->
+      <div class="mt-16 max-w-5xl mx-auto">
+        <div class="aspect-video bg-editor-surface rounded-2xl border border-editor-border flex items-center justify-center overflow-hidden">
+          <div class="text-center p-8">
+            <svg class="w-16 h-16 mx-auto text-editor-text-muted/30 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 15.652l-3.137-3.137a4.5 4.5 0 01-1.414-6.364l.027-.028a3 3 0 114.243 4.243l-.027.028a4.5 4.5 0 00-1.414 6.364l3.137 3.137a1.5 1.5 0 01-2.121 2.121l-2.6-2.6a1.5 1.5 0 010-2.121l2.6-2.6a1.5 1.5 0 012.121 0z"/></svg>
+            <p class="text-editor-text-muted font-medium">Demo video coming soon</p>
+            <p class="text-xs text-editor-text-muted/60 mt-1">Watch how text-based editing works in 60 seconds</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -117,7 +198,7 @@
   <section id="features" class="py-20 px-6 bg-editor-surface/50">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Everything you need, nothing you don't</h2>
-      <p class="text-lg text-editor-text-muted text-center mb-16 max-w-2xl mx-auto">Transcription, speaker labels, AI editing, noise reduction, and more — all offline, one-time price.</p>
+      <p class="text-lg text-editor-text-muted text-center mb-16 max-w-2xl mx-auto">Transcription, speaker labels, AI editing, noise reduction, animated captions, and more — all offline, one-time price.</p>
 
       <div class="grid md:grid-cols-3 gap-6">
         <div class="feature-card bg-editor-surface border border-editor-border rounded-xl p-6 transition">
@@ -125,7 +206,7 @@
             <svg class="w-5 h-5 text-editor-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/></svg>
           </div>
           <h3 class="font-semibold text-lg mb-2">Text-based editing</h3>
-          <p class="text-editor-text-muted text-sm leading-relaxed">Delete words to cut, mute, adjust gain, or change speed — all by editing text. Full keyboard shortcuts with custom remapping. Edit like a doc.</p>
+          <p class="text-editor-text-muted text-sm leading-relaxed">Delete words to cut, mute, adjust gain, or change speed — all by editing text. Full keyboard shortcuts with custom remapping. 100-level undo/redo. Edit like a doc.</p>
         </div>
 
         <div class="feature-card bg-editor-surface border border-editor-border rounded-xl p-6 transition">
@@ -133,7 +214,7 @@
             <svg class="w-5 h-5 text-editor-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           </div>
           <h3 class="font-semibold text-lg mb-2">Handles hour+ files</h3>
-          <p class="text-editor-text-muted text-sm leading-relaxed">Virtualized transcript and chunked waveform — no lag on long recordings. Speaker diarization labels who said what.</p>
+          <p class="text-editor-text-muted text-sm leading-relaxed">Virtualized transcript and chunked waveform — no lag on long recordings. Speaker diarization labels who said what. Pause and resume transcription.</p>
         </div>
 
         <div class="feature-card bg-editor-surface border border-editor-border rounded-xl p-6 transition">
@@ -141,7 +222,39 @@
             <svg class="w-5 h-5 text-editor-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
           </div>
           <h3 class="font-semibold text-lg mb-2">AI-powered editing</h3>
-          <p class="text-editor-text-muted text-sm leading-relaxed">Filler word removal, silence trimming, and clip suggestions for social media. Works with local Ollama or cloud OpenAI/Claude.</p>
+          <p class="text-editor-text-muted text-sm leading-relaxed">Filler word removal, Smart Clean, sentence rephrase, clip suggestions for social media, and AI show notes. Works with local Ollama or cloud OpenAI/Claude.</p>
+        </div>
+
+        <div class="feature-card bg-editor-surface border border-editor-border rounded-xl p-6 transition">
+          <div class="w-10 h-10 rounded-lg bg-editor-accent/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-editor-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">Animated Captions</h3>
+          <p class="text-editor-text-muted text-sm leading-relaxed">Burn in TikTok-style word-by-word captions with customizable style, color, and animation. Export with video or as SRT, VTT, or ASS subtitles.</p>
+        </div>
+
+        <div class="feature-card bg-editor-surface border border-editor-border rounded-xl p-6 transition">
+          <div class="w-10 h-10 rounded-lg bg-editor-accent/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-editor-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17H9v-.75A2.25 2.25 0 0111.25 14h.75M12 21a9 9 0 100-18 9 9 0 000 18z"/></svg>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">AI Chat Assistant</h3>
+          <p class="text-editor-text-muted text-sm leading-relaxed">Chat with your transcript. Ask for rephrases, summaries, show notes, or social posts — the assistant executes edits directly. Supports Ollama, OpenAI, and Claude.</p>
+        </div>
+
+        <div class="feature-card bg-editor-surface border border-editor-border rounded-xl p-6 transition">
+          <div class="w-10 h-10 rounded-lg bg-editor-accent/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-editor-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">Smart Clean</h3>
+          <p class="text-editor-text-muted text-sm leading-relaxed">One-click audio cleanup: filler removal + silence trimming + noise reduction + loudness normalization. Presets for Podcast, Interview, Social Media, and Presentation.</p>
+        </div>
+
+        <div class="feature-card bg-editor-surface border border-editor-border rounded-xl p-6 transition">
+          <div class="w-10 h-10 rounded-lg bg-editor-accent/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-editor-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0-11a3 3 0 013 3m-3-3a3 3 0 00-3 3"/></svg>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">Text-to-Speech</h3>
+          <p class="text-editor-text-muted text-sm leading-relaxed">Supertonic 3 — 99M param local TTS model, 31 languages, 44.1kHz. Generate voiceovers entirely offline. No cloud API needed.</p>
         </div>
 
         <div class="feature-card bg-editor-surface border border-editor-border rounded-xl p-6 transition">
@@ -149,15 +262,7 @@
             <svg class="w-5 h-5 text-editor-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
           </div>
           <h3 class="font-semibold text-lg mb-2">Privacy first</h3>
-          <p class="text-editor-text-muted text-sm leading-relaxed">100% offline. No account, no cloud, no telemetry. Save and load projects (.aive) with auto-save crash recovery.</p>
-        </div>
-
-        <div class="feature-card bg-editor-surface border border-editor-border rounded-xl p-6 transition">
-          <div class="w-10 h-10 rounded-lg bg-editor-accent/10 flex items-center justify-center mb-4">
-            <svg class="w-5 h-5 text-editor-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          </div>
-          <h3 class="font-semibold text-lg mb-2">One-time payment</h3>
-          <p class="text-editor-text-muted text-sm leading-relaxed">$49 Pro, $99 Business. Pro users upgrade to Business for $50. Own it forever.</p>
+          <p class="text-editor-text-muted text-sm leading-relaxed">100% offline. No account, no cloud, no telemetry. Auto-save crash recovery with resume on relaunch. Your data stays on your machine.</p>
         </div>
 
         <div class="feature-card bg-editor-surface border border-editor-border rounded-xl p-6 transition">
@@ -165,70 +270,31 @@
             <svg class="w-5 h-5 text-editor-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"/></svg>
           </div>
           <h3 class="font-semibold text-lg mb-2">Export how you want</h3>
-          <p class="text-editor-text-muted text-sm leading-relaxed">MP4, MOV, WebM, or WAV. Captions, chapters, noise reduction, background removal, Ken Burns zoom, and music with auto-ducking. Fast stream-copy mode in seconds.</p>
+          <p class="text-editor-text-muted text-sm leading-relaxed">MP4, MOV, WebM, or WAV — up to 4K. Animated captions, chapters, background music with auto-ducking, Ken Burns zoom, and noise reduction. Fast stream-copy export in seconds.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="py-20 px-6">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Loved by creators</h2>
-      <p class="text-lg text-editor-text-muted text-center mb-16 max-w-2xl mx-auto">Join podcasters and video creators who edit faster by editing text.</p>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-editor-surface border border-editor-border rounded-xl p-6">
-          <div class="flex items-center gap-1 mb-4">
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          </div>
-          <p class="text-editor-text text-sm leading-relaxed mb-4">&ldquo;TalkEdit cut my podcast editing time in half. Being able to just delete words from the transcript instead of scrubbing through waveforms is a game changer.&rdquo;</p>
-          <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-full bg-editor-accent/20 flex items-center justify-center text-xs font-bold text-editor-accent">AK</div>
-            <div>
-              <p class="text-sm font-medium">Alex K.</p>
-              <p class="text-xs text-editor-text-muted">Podcast Producer</p>
-            </div>
-          </div>
-        </div>
-        <div class="bg-editor-surface border border-editor-border rounded-xl p-6">
-          <div class="flex items-center gap-1 mb-4">
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          </div>
-          <p class="text-editor-text text-sm leading-relaxed mb-4">&ldquo;I was skeptical about offline-only, but it's actually faster than cloud editors. No uploading, no waiting. Just open a file and start editing.&rdquo;</p>
-          <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-full bg-editor-accent/20 flex items-center justify-center text-xs font-bold text-editor-accent">SR</div>
-            <div>
-              <p class="text-sm font-medium">Sarah R.</p>
-              <p class="text-xs text-editor-text-muted">YouTube Creator</p>
-            </div>
-          </div>
-        </div>
-        <div class="bg-editor-surface border border-editor-border rounded-xl p-6">
-          <div class="flex items-center gap-1 mb-4">
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          </div>
-          <p class="text-editor-text text-sm leading-relaxed mb-4">&ldquo;The AI filler removal alone saves me 20 minutes per episode. Smart Clean is my favorite feature — one click and my audio is polished.&rdquo;</p>
-          <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-full bg-editor-accent/20 flex items-center justify-center text-xs font-bold text-editor-accent">MJ</div>
-            <div>
-              <p class="text-sm font-medium">Marcus J.</p>
-              <p class="text-xs text-editor-text-muted">Podcast Editor</p>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- Trust bar -->
+  <section class="py-12 px-6 border-y border-editor-border/50">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-sm text-editor-text-muted">
+      <span class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-editor-success shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+        30-day money-back guarantee
+      </span>
+      <span class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-editor-success shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+        Stripe secure checkout
+      </span>
+      <span class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-editor-success shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+        100% offline — no data leaves your machine
+      </span>
+      <span class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-editor-success shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+        One-time payment, own it forever
+      </span>
     </div>
   </section>
 
@@ -344,6 +410,7 @@
               Feature requests prioritized
             </li>
           </ul>
+          <p class="text-xs text-editor-text-muted mt-4 text-center">30-day money-back guarantee</p>
           <a href="https://buy.stripe.com/3cIaEW56QabFgcF6iS4wM01" class="block w-full text-center bg-editor-accent hover:bg-editor-accent-hover text-white font-semibold px-4 py-3 rounded-lg transition text-sm">Buy Business — $99</a>
         </div>
       </div>
@@ -416,6 +483,41 @@
               <td class="text-center py-4 px-4 text-editor-text-muted">Minimal</td>
               <td class="text-center py-4 px-4 text-editor-text-muted">Telemetry</td>
             </tr>
+            <tr class="border-b border-editor-border/50">
+              <td class="py-4 pr-6 text-editor-text-muted">Animated captions</td>
+              <td class="text-center py-4 px-4"><span class="text-editor-success font-semibold">Native</span></td>
+              <td class="text-center py-4 px-4 text-editor-text-muted">&mdash;</td>
+              <td class="text-center py-4 px-4 text-editor-text-muted">Manual</td>
+              <td class="text-center py-4 px-4 text-editor-text-muted">Limited</td>
+            </tr>
+            <tr class="border-b border-editor-border/50">
+              <td class="py-4 pr-6 text-editor-text-muted">AI chat assistant</td>
+              <td class="text-center py-4 px-4"><span class="text-editor-success font-semibold">Local + Cloud</span></td>
+              <td class="text-center py-4 px-4 text-editor-text-muted">Cloud only</td>
+              <td class="text-center py-4 px-4 text-editor-text-muted">&mdash;</td>
+              <td class="text-center py-4 px-4 text-editor-text-muted">Cloud only</td>
+            </tr>
+            <tr class="border-b border-editor-border/50">
+              <td class="py-4 pr-6 text-editor-text-muted">Smart Clean (one-click)</td>
+              <td class="text-center py-4 px-4"><span class="text-editor-success font-semibold">Yes</span></td>
+              <td class="text-center py-4 px-4 text-editor-text-muted">Manual</td>
+              <td class="text-center py-4 px-4 text-editor-text-muted">&mdash;</td>
+              <td class="text-center py-4 px-4 text-editor-text-muted">&mdash;</td>
+            </tr>
+            <tr class="border-b border-editor-border/50">
+              <td class="py-4 pr-6 text-editor-text-muted">Local text-to-speech</td>
+              <td class="text-center py-4 px-4"><span class="text-editor-success font-semibold">31 languages</span></td>
+              <td class="text-center py-4 px-4 text-editor-text-muted">Cloud only</td>
+              <td class="text-center py-4 px-4 text-editor-text-muted">&mdash;</td>
+              <td class="text-center py-4 px-4 text-editor-text-muted">Cloud only</td>
+            </tr>
+            <tr>
+              <td class="py-4 pr-6 text-editor-text-muted">Auto-updater</td>
+              <td class="text-center py-4 px-4"><span class="text-editor-success font-semibold">Yes</span></td>
+              <td class="text-center py-4 px-4 text-editor-text-muted">Yes</td>
+              <td class="text-center py-4 px-4 text-editor-text-muted">Manual</td>
+              <td class="text-center py-4 px-4 text-editor-text-muted">Yes</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -426,24 +528,32 @@
   <section id="download" class="py-20 px-6">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Get TalkEdit</h2>
-      <p class="text-lg text-editor-text-muted mb-10">Beta v0.2.26 — Linux, Windows, macOS. Free 7-day trial.</p>
-      <div class="flex flex-wrap items-center justify-center gap-4">
-        <a href="https://pub-1318c18d2a524a0a9cda209ceb60cdee.r2.dev/TalkEdit_latest_x64_en-US.msi" class="inline-flex items-center gap-2 bg-editor-accent hover:bg-editor-accent-hover text-white px-6 py-3 rounded-xl text-base font-semibold transition glow">
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      <p class="text-lg text-editor-text-muted mb-10">Beta v0.2.45 — Linux, Windows, macOS. Free 7-day trial.</p>
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <a href="https://pub-1318c18d2a524a0a9cda209ceb60cdee.r2.dev/TalkEdit_latest_x64_en-US.msi" class="inline-flex items-center gap-2 bg-editor-accent hover:bg-editor-accent-hover text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition glow">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
           .msi (Windows)
         </a>
-        <a href="https://pub-1318c18d2a524a0a9cda209ceb60cdee.r2.dev/TalkEdit_latest_aarch64.dmg" class="inline-flex items-center gap-2 bg-editor-accent hover:bg-editor-accent-hover text-white px-6 py-3 rounded-xl text-base font-semibold transition glow">
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        <a href="https://pub-1318c18d2a524a0a9cda209ceb60cdee.r2.dev/TalkEdit_latest_aarch64.dmg" class="inline-flex items-center gap-2 bg-editor-accent hover:bg-editor-accent-hover text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition glow">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
           .dmg (macOS)
         </a>
-        <a href="https://pub-1318c18d2a524a0a9cda209ceb60cdee.r2.dev/TalkEdit_latest_amd64.AppImage" class="inline-flex items-center gap-2 bg-editor-accent hover:bg-editor-accent-hover text-white px-6 py-3 rounded-xl text-base font-semibold transition glow">
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-          AppImage (any Linux)
+        <a href="https://pub-1318c18d2a524a0a9cda209ceb60cdee.r2.dev/TalkEdit_latest_amd64.AppImage" class="inline-flex items-center gap-2 bg-editor-accent hover:bg-editor-accent-hover text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition glow">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          AppImage (Linux)
         </a>
-
+        <a href="https://pub-1318c18d2a524a0a9cda209ceb60cdee.r2.dev/TalkEdit_latest_amd64.deb" class="inline-flex items-center gap-2 bg-editor-accent hover:bg-editor-accent-hover text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition glow">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          .deb (Debian/Ubuntu)
+        </a>
+        <a href="https://pub-1318c18d2a524a0a9cda209ceb60cdee.r2.dev/TalkEdit_latest_x86_64.rpm" class="inline-flex items-center gap-2 bg-editor-accent hover:bg-editor-accent-hover text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition glow">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          .rpm (Fedora/RHEL)
+        </a>
       </div>
-      <p class="text-editor-text-muted text-sm mt-4">
-        Linux &bull; Windows &bull; macOS (Apple Silicon)
+      <p class="text-xs text-editor-text-muted/50 mt-4">30-day money-back guarantee on all purchases</p>
+      <p class="text-editor-text-muted text-sm mt-1">
+        Linux (.deb, .rpm, AppImage) &bull; Windows (.msi) &bull; macOS (Apple Silicon)
       </p>
     </div>
   </section>
