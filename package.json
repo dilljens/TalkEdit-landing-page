@@ -1,0 +1,15 @@
+{
+  "name": "talkedit-landing-page",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "deploy": "npx wrangler pages deploy . --project-name talk-edit-landing-page --branch main"
+  },
+  "dependencies": {
+    "@noble/ed25519": "^2.2.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
