@@ -145,7 +145,7 @@ export const onRequest: PagesFunction<Env> = async (context) => {
       tier,
       features,
       issued_at: now,
-      expires_at: now + 365 * 86400,  // 1 year license
+      expires_at: 0,  // perpetual — never expires
       max_activations: 3,
     };
 
