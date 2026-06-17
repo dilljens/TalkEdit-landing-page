@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --color-editor-bg: #0f1117;
+  --color-editor-surface: #1a1d27;
+  --color-editor-border: #2a2d3a;
+  --color-editor-accent: #6366f1;
+  --color-editor-accent-hover: #818cf8;
+  --color-editor-text: #e2e8f0;
+  --color-editor-text-muted: #94a3b8;
+  --color-editor-danger: #ef4444;
+  --color-editor-success: #22c55e;
+  --color-editor-warning: #f59e0b;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap');
+
+* { font-family: 'Inter', system-ui, sans-serif; }
+
+html { scroll-behavior: smooth; }
+
+.glow { box-shadow: 0 0 30px rgba(99, 102, 241, 0.15); }
+
+.gradient-text {
+  background: linear-gradient(135deg, #6366f1, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.12);
+}
+
+.pricing-card:hover { transform: translateY(-4px); }
+
+#comparison tbody tr:hover { background: rgba(26, 29, 39, 0.4); }

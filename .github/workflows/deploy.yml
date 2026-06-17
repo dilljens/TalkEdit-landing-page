@@ -33,6 +33,8 @@ jobs:
           sed -i "s/Beta v[0-9.]\+/Beta $TAG/" index.html
       - name: Install dependencies
         run: npm install
+      - name: Build CSS
+        run: npx tailwindcss -i src/style.css -o assets/style.css
       - name: Install Wrangler
         run: npm install -g wrangler
       - name: Deploy to Pages

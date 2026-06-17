@@ -114,42 +114,7 @@
     ]
   }
   </script>
-  <script defer src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            editor: {
-              bg: '#0f1117',
-              surface: '#1a1d27',
-              border: '#2a2d3a',
-              accent: '#6366f1',
-              'accent-hover': '#818cf8',
-              text: '#e2e8f0',
-              'text-muted': '#94a3b8',
-              danger: '#ef4444',
-              success: '#22c55e',
-              warning: '#f59e0b',
-            }
-          },
-          fontFamily: {
-            mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap');
-    * { font-family: 'Inter', system-ui, sans-serif; }
-    html { scroll-behavior: smooth; }
-    .glow { box-shadow: 0 0 30px rgba(99, 102, 241, 0.15); }
-    .gradient-text { background: linear-gradient(135deg, #6366f1, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .feature-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99, 102, 241, 0.12); }
-    .pricing-card:hover { transform: translateY(-4px); }
-    #comparison tbody tr:hover { background: rgba(26, 29, 39, 0.4); }
-  </style>
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body class="bg-editor-bg text-editor-text antialiased">
 
