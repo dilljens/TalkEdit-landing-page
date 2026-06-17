@@ -3,21 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TalkEdit — Offline Video Editor for Long-Form Content</title>
-  <meta name="description" content="Edit video by editing text. Fully offline, one-time purchase, works on hour+ files. AI-powered filler removal, silence trimming, and clip suggestions." />
-  <meta property="og:title" content="TalkEdit — Offline Video Editor for Long-Form Content" />
-  <meta property="og:description" content="Edit video by editing text. Fully offline, one-time payment. Works on hour+ files." />
+  <title>TalkEdit — Offline AI Video Editor for Podcasters &amp; Long-Form Creators</title>
+  <meta name="description" content="Edit video by editing text. Fully offline AI video editor for podcasters — filler removal, animated captions, hour+ files. One-time payment, no subscription." />
+  <meta property="og:title" content="TalkEdit — Offline AI Video Editor for Podcasters &amp; Long-Form Creators" />
+  <meta property="og:description" content="Edit video by editing text. Fully offline, one-time payment. AI-powered editing for podcasters and long-form creators." />
   <meta property="og:image" content="https://talk-edit.com/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="TalkEdit — Offline Video Editor for Long-Form Content" />
-  <meta name="twitter:description" content="Edit video by editing text. Fully offline, one-time purchase. AI-powered editing for podcasters and long-form creators." />
+  <meta name="twitter:title" content="TalkEdit — Offline AI Video Editor for Podcasters &amp; Long-Form Creators" />
+  <meta name="twitter:description" content="Edit video by editing text. Fully offline, one-time purchase. AI-powered filler removal, animated captions, and Smart Clean for podcasters." />
   <meta property="og:url" content="https://talk-edit.com" />
   <meta name="keywords" content="video editor, offline video editor, AI video editor, text-based editing, podcast editor, long-form video, transcription editor" />
   <link rel="canonical" href="https://talk-edit.com" />
   <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+  <link rel="preload" href="og-image.png" as="image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TalkEdit",
+    "url": "https://talk-edit.com",
+    "description": "Offline video editor for podcasters and long-form creators. Edit video by editing text."
+  }
+  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -102,7 +115,7 @@
     ]
   }
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -618,11 +631,14 @@
             type="email"
             name="email"
             placeholder="your@email.com"
+            autocomplete="email"
+            aria-label="Email address for newsletter"
             required
             class="w-full sm:w-auto flex-1 bg-editor-surface border border-editor-border rounded-lg px-4 py-2.5 text-sm text-editor-text placeholder:text-editor-text-muted/50 focus:outline-none focus:border-editor-accent transition"
           />
           <button
             type="submit"
+            aria-label="Subscribe to newsletter"
             class="w-full sm:w-auto whitespace-nowrap bg-editor-accent hover:bg-editor-accent-hover text-white px-5 py-2.5 rounded-lg text-sm font-medium transition"
           >
             Subscribe
