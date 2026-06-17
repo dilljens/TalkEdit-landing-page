@@ -10,7 +10,8 @@
 //   Pro:     price_1RQFclP78vm6Q5n6HW3bb83C  → 49 USD
 //   Business: price_1RQFdEP78vm6Q5n6fK2XxgGC → 99 USD
 
-import { hexToBytes, bytesToHex } from '@noble/ed25519';
+import { etc } from '@noble/ed25519';
+const { hexToBytes, bytesToHex } = etc;
 
 interface Env {
   STRIPE_WEBHOOK_SECRET: string;
