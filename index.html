@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TalkEdit — Offline AI Video Editor for Podcasters &amp; Long-Form Creators</title>
-  <meta name="description" content="Edit video by editing text. Fully offline AI video editor for podcasters — filler removal, animated captions, hour+ files. One-time payment, no subscription." />
-  <meta property="og:title" content="TalkEdit — Offline AI Video Editor for Podcasters &amp; Long-Form Creators" />
-  <meta property="og:description" content="Edit video by editing text. Fully offline, one-time payment. AI-powered editing for podcasters and long-form creators." />
+  <title>TalkEdit: Text-Based AI Video Editor — Offline &amp; One-Time Payment $49</title>
+  <meta name="description" content="Edit video by editing text. TalkEdit is the offline AI video editor that replaces Descript. One-time $49 payment. Filler removal, animated captions, hour+ files. No subscription." />
+  <meta property="og:title" content="TalkEdit: Text-Based AI Video Editor — Offline &amp; One-Time Payment $49" />
+  <meta property="og:description" content="Edit video by editing text. TalkEdit is the offline AI video editor that replaces Descript. One-time $49, no subscription. Filler removal, animated captions, Smart Clean." />
   <meta property="og:image" content="https://talk-edit.com/og-image.webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="TalkEdit — Offline AI Video Editor for Podcasters &amp; Long-Form Creators" />
-  <meta name="twitter:description" content="Edit video by editing text. Fully offline, one-time purchase. AI-powered filler removal, animated captions, and Smart Clean for podcasters." />
+  <meta name="twitter:title" content="TalkEdit: Text-Based AI Video Editor — Offline &amp; One-Time Payment $49" />
+  <meta name="twitter:description" content="Edit video by editing text. TalkEdit is the offline AI video editor that replaces Descript. One-time $49, no subscription. AI-powered filler removal, animated captions, Smart Clean." />
   <meta property="og:url" content="https://talk-edit.com" />
   <meta name="keywords" content="video editor, offline video editor, AI video editor, text-based editing, podcast editor, long-form video, transcription editor" />
   <link rel="canonical" href="https://talk-edit.com" />
@@ -33,17 +33,26 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://talk-edit.com" },
+      { "@type": "ListItem", "position": 2, "name": "Features", "item": "https://talk-edit.com/#features" },
+      { "@type": "ListItem", "position": 3, "name": "Pricing", "item": "https://talk-edit.com/#pricing" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "TalkEdit",
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "Windows, macOS, Linux",
     "description": "Edit video by editing text. Fully offline video editor with AI-powered features for podcasters and long-form creators.",
-    "offers": {
-      "@type": "Offer",
-      "price": "49.00",
-      "priceCurrency": "USD",
-      "description": "One-time purchase"
-    },
+    "offers": [
+      { "@type": "Offer", "name": "Pro", "price": "49.00", "priceCurrency": "USD", "description": "One-time purchase" },
+      { "@type": "Offer", "name": "Business", "price": "99.00", "priceCurrency": "USD", "description": "One-time purchase with AI features" }
+    ],
     "featureList": [
       "Text-based video editing",
       "AI transcription with speaker diarization",
@@ -59,6 +68,19 @@
       "Custom transcription glossary",
       "Audio crossfade at cut points",
       "Export to MP4, MOV, WebM, WAV"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "TalkEdit",
+    "brand": { "@type": "Brand", "name": "TalkEdit" },
+    "description": "Offline AI-powered video editor for podcasters. Text-based editing, filler removal, animated captions. One-time payment, no subscription.",
+    "offers": [
+      { "@type": "Offer", "name": "Pro", "price": "49.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "availability": "https://schema.org/InStock", "url": "https://talk-edit.com" },
+      { "@type": "Offer", "name": "Business", "price": "99.00", "priceCurrency": "USD", "priceValidUntil": "2027-12-31", "availability": "https://schema.org/InStock", "url": "https://talk-edit.com" }
     ]
   }
   </script>
@@ -118,6 +140,34 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Edit a video with TalkEdit",
+    "description": "Edit video by editing text in 3 simple steps.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Import your video",
+        "text": "Import your video file — MP4, MOV, MKV, WebM, or M4A. Transcription starts automatically with your choice of Whisper model."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Edit by deleting text",
+        "text": "Select words to cut, mute, speed up, or adjust gain. Drag zones on the waveform. Full undo/redo with keyboard shortcuts."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Export and publish",
+        "text": "Choose your format, resolution, captions style, and loudness target. One click to export with stream-copy for fast rendering."
+      }
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body class="bg-editor-bg text-editor-text antialiased">
@@ -126,7 +176,7 @@
   <nav class="fixed top-0 left-0 right-0 z-50 bg-editor-bg/80 backdrop-blur-lg border-b border-editor-border">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <img src="logo.webp" alt="TalkEdit" class="w-7 h-7 rounded" />
+        <img src="logo.webp" alt="TalkEdit logo — offline AI video editor" class="w-7 h-7 rounded" />
         <span class="font-bold text-lg">TalkEdit</span>
       </div>
       <div class="flex items-center gap-3 sm:gap-6">
@@ -145,8 +195,8 @@
         Free 7-day trial &middot; 30-day guarantee &middot; no credit card
       </div>
       <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
-        Edit video by<br />
-        <span class="gradient-text">editing text</span>
+        AI Video Editor —<br />
+        <span class="gradient-text">Edit by Editing Text</span>
       </h1>
       <p class="text-xl text-editor-text/70 max-w-2xl mx-auto mb-10 leading-relaxed">
         The offline video editor built for podcasters and long-form creators.
@@ -297,7 +347,7 @@
   <!-- How It Works -->
   <section class="py-20 px-6">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">How it works</h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">How the Offline AI Video Editor Works</h2>
       <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4">
         <div class="text-center flex-1 max-w-xs animate-in">
           <div class="w-12 h-12 rounded-full bg-editor-accent/10 flex items-center justify-center mx-auto mb-4">
@@ -335,8 +385,8 @@
   <!-- Pricing -->
   <section id="pricing" class="py-20 px-6 bg-editor-surface/50">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Simple, transparent pricing</h2>
-      <p class="text-lg text-editor-text-muted text-center mb-16 max-w-xl mx-auto">Start free. No credit card required. Upgrade when you're ready.</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">The Only Offline AI Video Editor with a One-Time Price</h2>
+      <p class="text-lg text-editor-text-muted text-center mb-16 max-w-xl mx-auto">Start with a free trial — no credit card. $49 Pro or $99 Business, own it forever.</p>
 
       <div class="grid md:grid-cols-3 gap-6">
         <!-- Free Trial -->
@@ -424,8 +474,8 @@
   <!-- Comparison -->
   <section id="comparison" class="py-20 px-6 bg-editor-surface/30">
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 animate-in">Why TalkEdit?</h2>
-      <p class="text-lg text-editor-text-muted text-center mb-16 max-w-2xl mx-auto animate-in">Built differently than cloud editors and traditional NLEs.</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 animate-in">TalkEdit vs Descript, DaVinci &amp; CapCut</h2>
+      <p class="text-lg text-editor-text-muted text-center mb-16 max-w-2xl mx-auto animate-in">The only offline AI video editor with a one-time price. Compare features, privacy, and pricing.</p>
       <div class="overflow-x-auto">
         <table class="w-full text-sm">
           <thead>
@@ -644,7 +694,7 @@
 
       <div class="mt-16 pt-12 border-t border-editor-border">
         <h3 class="text-xl font-semibold mb-2">Stay in the loop</h3>
-        <p class="text-editor-text-muted text-sm mb-6">New features, tips, and release announcements. No spam.</p>
+        <p class="text-editor-text-muted text-sm mb-6">Read our <a href="/blog/text-based-video-editing-guide" class="text-editor-accent hover:underline">guide to text-based editing</a>, check out the <a href="/blog/best-offline-ai-video-editors" class="text-editor-accent hover:underline">best offline AI editors of 2026</a>, or subscribe for updates.</p>
         <div class="bg-editor-surface/30 border border-editor-border/50 rounded-xl p-6 max-w-md mx-auto">
         <form id="subscribe-form" class="flex flex-col sm:flex-row items-center justify-center gap-3">
           <input
@@ -683,9 +733,10 @@
         <span class="text-sm text-editor-text-muted">TalkEdit Beta v0.2.45 &middot; &copy; 2026</span>
       </div>
       <div class="flex items-center gap-6">
+        <a href="/vs/descript" class="text-sm text-editor-text-muted hover:text-editor-text transition">vs Descript</a>
+        <a href="/blog/best-offline-ai-video-editors" class="text-sm text-editor-text-muted hover:text-editor-text transition">Best Offline Editors</a>
         <a href="privacy.html" class="text-sm text-editor-text-muted hover:text-editor-text transition">Privacy</a>
         <a href="terms.html" class="text-sm text-editor-text-muted hover:text-editor-text transition">Terms</a>
-        <a href="mailto:hello@talk-edit.com" class="text-sm text-editor-text-muted hover:text-editor-text transition">Contact</a>
       </div>
     </div>
   </footer>
