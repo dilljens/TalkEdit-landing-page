@@ -218,8 +218,8 @@
 
     <!-- Hero image / video placeholder -->
     <div class="mt-16 max-w-5xl mx-auto">
-        <div class="aspect-video bg-gradient-to-br from-editor-accent/5 to-editor-surface rounded-2xl border border-editor-border flex items-center justify-center overflow-hidden">
-          <div class="text-center p-8">
+      <div class="aspect-video bg-gradient-to-br from-editor-accent/5 to-editor-surface rounded-2xl border border-editor-border flex items-center justify-center overflow-hidden">
+        <div class="text-center p-8">
           <svg class="w-16 h-16 mx-auto text-editor-text-muted/30 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 15.652l-3.137-3.137a4.5 4.5 0 01-1.414-6.364l.027-.028a3 3 0 114.243 4.243l-.027.028a4.5 4.5 0 00-1.414 6.364l3.137 3.137a1.5 1.5 0 01-2.121 2.121l-2.6-2.6a1.5 1.5 0 010-2.121l2.6-2.6a1.5 1.5 0 012.121 0z"/></svg>
           <p class="text-editor-text-muted font-medium">Demo video coming soon</p>
           <p class="text-xs text-editor-text-muted/60 mt-1">Watch how text-based editing works in 60 seconds</p>
@@ -229,7 +229,7 @@
   </section>
 
   <!-- Features -->
-  <section id="features" class="py-20 px-6 bg-editor-surface/50">
+  <section id="features" class="py-20 px-6 bg-editor-surface/50 scroll-mt-16">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Everything you need, nothing you don't</h2>
       <p class="text-lg text-editor-text-muted text-center mb-16 max-w-2xl mx-auto">Remote recording, script mode, AI transcription, speaker labels, Smart Clean, animated captions, and more — all offline, one-time price.</p>
@@ -402,7 +402,7 @@
   </section>
 
   <!-- Pricing -->
-  <section id="pricing" class="py-20 px-6 bg-editor-surface/50">
+  <section id="pricing" class="py-20 px-6 bg-editor-surface/50 scroll-mt-16">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">The Only Offline AI Video Editor with a One-Time Price</h2>
       <p class="text-lg text-editor-text-muted text-center mb-16 max-w-xl mx-auto">Start your 7-day free trial. Cancel anytime. $49 Pro or $99 Business, own it forever.</p>
@@ -626,10 +626,10 @@
   </section>
 
   <!-- Download -->
-  <section id="download" class="py-20 px-6">
+  <section id="download" class="py-20 px-6 scroll-mt-16">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Get TalkEdit</h2>
-      <p class="text-lg text-editor-text-muted mb-10">Beta v0.2.45 — Linux, Windows, macOS. Free 7-day trial.</p>
+      <p class="text-lg text-editor-text-muted mb-10">Beta v0.2.59 — Linux, Windows, macOS. Free 7-day trial.</p>
       <div class="flex items-center justify-center gap-6 mb-8 text-editor-text-muted/50">
         <span class="flex items-center gap-1.5 text-xs">
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
@@ -670,42 +670,42 @@
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Frequently asked questions</h2>
       <div class="space-y-4">
-        <details class="group bg-editor-surface/90 backdrop-blur-sm border border-editor-border rounded-xl p-5 open:border-editor-accent hover:border-editor-text-muted/20 transition">
+        <details class="group bg-editor-surface/90 backdrop-blur-sm border border-editor-border rounded-xl p-5 open:border-editor-accent hover:border-editor-text-muted/30 transition">
           <summary class="flex items-center justify-between cursor-pointer font-medium">
             Is it really 100% offline?
             <svg class="w-5 h-5 text-editor-text-muted group-open:rotate-180 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <p class="mt-4 text-editor-text-muted text-sm leading-relaxed">Yes. Transcription, AI features, and export all run locally. No data ever leaves your machine. No account required. The only time it touches the network is downloading Whisper models (optional) or if you connect to a local Ollama instance.</p>
         </details>
-        <details class="group bg-editor-surface/90 backdrop-blur-sm border border-editor-border rounded-xl p-5 open:border-editor-accent hover:border-editor-text-muted/20 transition">
+        <details class="group bg-editor-surface/90 backdrop-blur-sm border border-editor-border rounded-xl p-5 open:border-editor-accent hover:border-editor-text-muted/30 transition">
           <summary class="flex items-center justify-between cursor-pointer font-medium">
             How long can my videos be?
             <svg class="w-5 h-5 text-editor-text-muted group-open:rotate-180 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <p class="mt-4 text-editor-text-muted text-sm leading-relaxed">TalkEdit handles hour+ files without issue. The transcript uses virtualized rendering and the waveform uses chunked loading — no lag, no crashes. We regularly test with 2-3 hour podcast recordings.</p>
         </details>
-        <details class="group bg-editor-surface/90 backdrop-blur-sm border border-editor-border rounded-xl p-5 open:border-editor-accent hover:border-editor-text-muted/20 transition">
+        <details class="group bg-editor-surface/90 backdrop-blur-sm border border-editor-border rounded-xl p-5 open:border-editor-accent hover:border-editor-text-muted/30 transition">
           <summary class="flex items-center justify-between cursor-pointer font-medium">
             What's the refund policy?
             <svg class="w-5 h-5 text-editor-text-muted group-open:rotate-180 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <p class="mt-4 text-editor-text-muted text-sm leading-relaxed">30-day money-back guarantee, no questions asked. If TalkEdit doesn't work for you, email us and you'll get a full refund.</p>
         </details>
-        <details class="group bg-editor-surface/90 backdrop-blur-sm border border-editor-border rounded-xl p-5 open:border-editor-accent hover:border-editor-text-muted/20 transition">
+        <details class="group bg-editor-surface/90 backdrop-blur-sm border border-editor-border rounded-xl p-5 open:border-editor-accent hover:border-editor-text-muted/30 transition">
           <summary class="flex items-center justify-between cursor-pointer font-medium">
             What formats are supported?
             <svg class="w-5 h-5 text-editor-text-muted group-open:rotate-180 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <p class="mt-4 text-editor-text-muted text-sm leading-relaxed">Input: MP4, MKV, MOV, AVI, WebM, M4A. Export: MP4 (H.264/H.265), MOV, WebM, WAV. Captions: SRT, VTT, ASS. Resolutions from 720p to 4K.</p>
         </details>
-        <details class="group bg-editor-surface/90 backdrop-blur-sm border border-editor-border rounded-xl p-5 open:border-editor-accent hover:border-editor-text-muted/20 transition">
+        <details class="group bg-editor-surface/90 backdrop-blur-sm border border-editor-border rounded-xl p-5 open:border-editor-accent hover:border-editor-text-muted/30 transition">
           <summary class="flex items-center justify-between cursor-pointer font-medium">
             Which platforms are supported?
             <svg class="w-5 h-5 text-editor-text-muted group-open:rotate-180 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
           </summary>
           <p class="mt-4 text-editor-text-muted text-sm leading-relaxed">Windows, macOS (Apple Silicon), and Linux. Download the right build for your platform above. All three are fully supported with the same features.</p>
         </details>
-        <details class="group bg-editor-surface/90 backdrop-blur-sm border border-editor-border rounded-xl p-5 open:border-editor-accent hover:border-editor-text-muted/20 transition">
+        <details class="group bg-editor-surface/90 backdrop-blur-sm border border-editor-border rounded-xl p-5 open:border-editor-accent hover:border-editor-text-muted/30 transition">
           <summary class="flex items-center justify-between cursor-pointer font-medium">
             Do I need a powerful GPU?
             <svg class="w-5 h-5 text-editor-text-muted group-open:rotate-180 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -762,15 +762,15 @@
   <footer class="border-t border-editor-border py-10 px-6">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="flex items-center gap-3">
-        <img src="logo.webp" alt="TalkEdit" class="w-6 h-6 rounded" />
-        <span class="text-sm text-editor-text-muted">TalkEdit Beta v0.2.45 &middot; &copy; 2026</span>
+        <img src="logo.webp" alt="TalkEdit" class="w-6 h-6 rounded" loading="lazy" />
+        <span class="text-sm text-editor-text-muted">TalkEdit Beta v0.2.59 &middot; &copy; 2026</span>
       </div>
       <div class="flex items-center gap-6">
-        <a href="/vs/descript/" class="text-sm text-editor-text-muted hover:text-editor-text transition">vs Descript</a>
-        <a href="/blog/edit-long-videos-without-crashing/" class="text-sm text-editor-text-muted hover:text-editor-text transition">No Lag on 3-Hour Files</a>
-        <a href="/blog/remote-recording-guide/" class="text-sm text-editor-text-muted hover:text-editor-text transition">Remote Recording Guide</a>
-        <a href="privacy.html" class="text-sm text-editor-text-muted hover:text-editor-text transition">Privacy</a>
-        <a href="terms.html" class="text-sm text-editor-text-muted hover:text-editor-text transition">Terms</a>
+        <a href="/vs/descript/" class="text-sm text-editor-text-muted hover:text-editor-text transition no-underline">vs Descript</a>
+        <a href="/blog/edit-long-videos-without-crashing/" class="text-sm text-editor-text-muted hover:text-editor-text transition no-underline">No Lag on 3-Hour Files</a>
+        <a href="/blog/remote-recording-guide/" class="text-sm text-editor-text-muted hover:text-editor-text transition no-underline">Remote Recording Guide</a>
+        <a href="privacy.html" class="text-sm text-editor-text-muted hover:text-editor-text transition no-underline">Privacy</a>
+        <a href="terms.html" class="text-sm text-editor-text-muted hover:text-editor-text transition no-underline">Terms</a>
       </div>
     </div>
   </footer>
