@@ -21,7 +21,10 @@
   <script defer src="https://umami.ferrumeng.com/script.js" data-website-id="0fc111ca-35ad-4c3e-a365-139b3ed26edf"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" /></noscript>
+  <link rel="preload" as="image" href="/assets/hero-screenshot.avif" fetchpriority="high" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -63,7 +66,7 @@
       "AI chat assistant with action execution",
       "Smart Clean: one-click audio cleanup",
       "Filler word removal",
-      "Local text-to-speech (31 languages)",
+      "Local text-to-speech (multi-engine, 600+ languages)",
       "Background music with auto-ducking",
       "Noise reduction and loudness normalization",
       "Background removal (MediaPipe)",
@@ -217,14 +220,14 @@
       <p class="text-xs text-editor-text-muted/60 mt-3">30-day money-back guarantee on all purchases</p>
     </div>
 
-    <!-- Hero image / video placeholder -->
+    <!-- Hero screenshot (AVIF + WebP) -->
     <div class="mt-16 max-w-5xl mx-auto">
-      <div class="aspect-video bg-gradient-to-br from-editor-accent/5 to-editor-surface rounded-2xl border border-editor-border flex items-center justify-center overflow-hidden">
-        <div class="text-center p-8">
-          <svg class="w-16 h-16 mx-auto text-editor-text-muted/30 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 15.652l-3.137-3.137a4.5 4.5 0 01-1.414-6.364l.027-.028a3 3 0 114.243 4.243l-.027.028a4.5 4.5 0 00-1.414 6.364l3.137 3.137a1.5 1.5 0 01-2.121 2.121l-2.6-2.6a1.5 1.5 0 010-2.121l2.6-2.6a1.5 1.5 0 012.121 0z"/></svg>
-          <p class="text-editor-text-muted font-medium">Demo video coming soon</p>
-          <p class="text-xs text-editor-text-muted/60 mt-1">Watch how text-based editing works in 60 seconds</p>
-        </div>
+      <div class="aspect-video rounded-2xl border border-editor-border overflow-hidden shadow-2xl shadow-editor-accent/5">
+        <picture>
+          <source srcset="/assets/hero-screenshot.avif" type="image/avif" />
+          <source srcset="/assets/hero-screenshot.webp" type="image/webp" />
+          <img src="/assets/hero-screenshot.webp" alt="TalkEdit app showing JFK moon speech transcript and waveform" width="1200" height="675" class="w-full h-full object-cover object-top" fetchpriority="high" />
+        </picture>
       </div>
     </div>
   </section>
@@ -320,7 +323,7 @@
             <svg class="w-5 h-5 text-editor-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0-11a3 3 0 013 3m-3-3a3 3 0 00-3 3"/></svg>
           </div>
           <h3 class="font-semibold text-lg mb-2">Text-to-Speech</h3>
-          <p class="text-editor-text-muted text-sm leading-relaxed">Supertonic 3 — 31 languages, 44.1kHz. Generate voiceovers entirely offline. No cloud API needed.</p>
+          <p class="text-editor-text-muted text-sm leading-relaxed">Multi-engine TTS: OmniVoice (600+ languages, voice cloning) and Kokoro-82M (54 preset voices, CPU-friendly). Generate voiceovers entirely offline. No cloud API needed.</p>
         </div>
 
         <div class="feature-card bg-editor-surface/90 backdrop-blur-sm border border-editor-border rounded-xl p-6 transition animate-in">
@@ -580,7 +583,7 @@
             </tr>
             <tr class="border-b border-editor-border/50">
               <td class="py-4 pr-6 text-editor-text-muted">Local text-to-speech</td>
-              <td class="text-center py-4 px-4"><span class="text-editor-success font-semibold">31 languages</span></td>
+              <td class="text-center py-4 px-4"><span class="text-editor-success font-semibold">600+ languages + cloning</span></td>
               <td class="text-center py-4 px-4 text-editor-text-muted">Cloud only</td>
               <td class="text-center py-4 px-4 text-editor-text-muted">&mdash;</td>
               <td class="text-center py-4 px-4 text-editor-text-muted">Cloud only</td>

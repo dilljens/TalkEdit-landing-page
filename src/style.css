@@ -39,8 +39,6 @@
   --color-editor-gray-950: #020617;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap');
-
 * { font-family: 'Inter', system-ui, sans-serif; }
 
 html { scroll-behavior: smooth; }
@@ -69,6 +67,13 @@ html { scroll-behavior: smooth; }
 .animate-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Below-fold lazy rendering */
+section[id],
+section.scroll-mt-16 {
+  content-visibility: auto;
+  contain-intrinsic-size: 600px;
 }
 
 /* Card hovers */
