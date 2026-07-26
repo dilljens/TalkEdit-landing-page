@@ -21,7 +21,7 @@ jobs:
       - name: Fetch latest version tag
         id: version
         run: |
-          TAG="v0.2.9"
+          TAG="v0.2.60"
           if [ -n "${{ github.event.inputs.version }}" ]; then
             TAG="${{ github.event.inputs.version }}"
           fi
@@ -31,6 +31,10 @@ jobs:
           TAG="${{ steps.version.outputs.tag }}"
           echo "Using version: $TAG"
           sed -i "s/Beta v[0-9.]\+/Beta $TAG/" index.html
+      - name: Install dependencies
+        run: npm install
+      - name: Build CSS
+        run: npx tailwindcss -i src/style.css -o assets/style.css
       - name: Install Wrangler
         run: npm install -g wrangler
       - name: Deploy to Pages
