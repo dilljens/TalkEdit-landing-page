@@ -6,3 +6,19 @@ assets/style.css
 .env
 .env.local
 .env.production
+
+# Local-only indexes, secrets, and caches
+.codegraph/
+.codebase-memory/
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+/dist/
+.venv*/
+.coverage
+.coverage.*
