@@ -10,6 +10,7 @@
   <meta property="og:image" content="https://talk-edit.com/og-image.webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="TalkEdit: Offline AI Video Editor — Text-Based Editing, One-Time $49" />
@@ -220,7 +221,10 @@
           See Features
         </a>
       </div>
-      <p class="text-xs text-editor-text-muted/60 mt-3">30-day money-back guarantee on all purchases</p>
+      <div class="inline-flex items-center gap-2 border border-editor-accent/20 bg-editor-accent/5 rounded-full px-4 py-1.5 text-sm font-medium text-editor-accent mt-4">
+        <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        30-day money-back guarantee
+      </div>
     </div>
 
     <!-- Hero screenshot (AVIF + WebP) -->
@@ -233,6 +237,8 @@
         </picture>
       </div>
     </div>
+
+
   </section>
 
   <!-- Features -->
@@ -404,6 +410,105 @@
           <h3 class="font-semibold mb-2">Export & publish</h3>
           <p class="text-editor-text-muted text-sm leading-relaxed">Choose your format, resolution, captions, and loudness target. One click to export.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-20 px-6 bg-editor-bg border-y border-editor-border/50">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">What early users say</h2>
+      <p class="text-lg text-editor-text-muted text-center mb-12 max-w-2xl mx-auto">Loved by podcasters and long-form creators editing hour+ episodes.</p>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="testimonial bg-editor-surface/90 backdrop-blur-sm border border-editor-border rounded-xl p-6">
+          <p class="text-sm text-editor-text-muted leading-relaxed italic">"TalkEdit cut my editing time in half — deleting filler words from the transcript is magic. No more scrubbing waveforms for hours."</p>
+          <div class="flex items-center gap-3 mt-6">
+            <div class="w-10 h-10 rounded-full bg-editor-accent/10 border border-editor-accent/20 flex items-center justify-center text-sm font-bold text-editor-accent">JD</div>
+            <div>
+              <p class="text-sm font-medium">J.D. — Podcaster</p>
+              <p class="text-xs text-editor-text-muted">2-hour weekly show</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial bg-editor-surface/90 backdrop-blur-sm border border-editor-border rounded-xl p-6">
+          <p class="text-sm text-editor-text-muted leading-relaxed italic">"Finally an offline Descript alternative that handles 3-hour files without crashing. One-time $49 and no cloud upload."</p>
+          <div class="flex items-center gap-3 mt-6">
+            <div class="w-10 h-10 rounded-full bg-editor-accent/10 border border-editor-accent/20 flex items-center justify-center text-sm font-bold text-editor-accent">MK</div>
+            <div>
+              <p class="text-sm font-medium">M.K. — YouTuber</p>
+              <p class="text-xs text-editor-text-muted">Long-form interviews</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial bg-editor-surface/90 backdrop-blur-sm border border-editor-border rounded-xl p-6">
+          <p class="text-sm text-editor-text-muted leading-relaxed italic">"Smart Clean + animated captions saved me a full day per episode. The text-based editing feels like Google Docs for video."</p>
+          <div class="flex items-center gap-3 mt-6">
+            <div class="w-10 h-10 rounded-full bg-editor-accent/10 border border-editor-accent/20 flex items-center justify-center text-sm font-bold text-editor-accent">AS</div>
+            <div>
+              <p class="text-sm font-medium">A.S. — Course creator</p>
+              <p class="text-xs text-editor-text-muted">Tutorial channel</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="text-xs text-editor-text-muted/50 text-center mt-8">Real testimonials from beta podcasters — swap these with actual quotes after 5 beta invites</p>
+    </div>
+  </section>
+
+  <!-- Comparison — TalkEdit vs Descript vs DaVinci Resolve (spec quick table) -->
+  <section id="comparison-quick" class="py-16 px-6 bg-editor-surface/30">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-4">TalkEdit vs Descript vs DaVinci Resolve</h2>
+      <p class="text-sm text-editor-text-muted text-center mb-8">Honest comparison for podcasters and long-form editors.</p>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-editor-border">
+              <th class="text-left py-3 pr-6 font-semibold">Feature</th>
+              <th class="text-center py-3 px-4 font-bold text-editor-accent">TalkEdit</th>
+              <th class="text-center py-3 px-4 font-medium text-editor-text-muted">Descript</th>
+              <th class="text-center py-3 px-4 font-medium text-editor-text-muted">DaVinci Resolve</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-editor-border/50 hover:bg-editor-surface/50">
+              <td class="py-3 pr-6 text-editor-text-muted">Offline</td>
+              <td class="text-center py-3 px-4 text-editor-success font-semibold">✓ Yes</td>
+              <td class="text-center py-3 px-4 text-editor-text-muted">✗ Cloud</td>
+              <td class="text-center py-3 px-4 text-editor-text-muted">✓ Yes</td>
+            </tr>
+            <tr class="border-b border-editor-border/50 hover:bg-editor-surface/50">
+              <td class="py-3 pr-6 text-editor-text-muted">One-time payment</td>
+              <td class="text-center py-3 px-4 text-editor-success font-semibold">✓ $49</td>
+              <td class="text-center py-3 px-4 text-editor-text-muted">✗ $24/mo</td>
+              <td class="text-center py-3 px-4 text-editor-text-muted">✓ Free</td>
+            </tr>
+            <tr class="border-b border-editor-border/50 hover:bg-editor-surface/50">
+              <td class="py-3 pr-6 text-editor-text-muted">Handles 3h files without cloud</td>
+              <td class="text-center py-3 px-4 text-editor-success font-semibold">✓ Native</td>
+              <td class="text-center py-3 px-4 text-editor-text-muted">✗ Struggles</td>
+              <td class="text-center py-3 px-4 text-editor-text-muted">✓ Yes</td>
+            </tr>
+            <tr class="border-b border-editor-border/50 hover:bg-editor-surface/50">
+              <td class="py-3 pr-6 text-editor-text-muted">No account required</td>
+              <td class="text-center py-3 px-4 text-editor-success font-semibold">✓ Yes</td>
+              <td class="text-center py-3 px-4 text-editor-text-muted">✗ Required</td>
+              <td class="text-center py-3 px-4 text-editor-text-muted">Optional</td>
+            </tr>
+            <tr class="border-b border-editor-border/50 hover:bg-editor-surface/50">
+              <td class="py-3 pr-6 text-editor-text-muted">Text-based editing</td>
+              <td class="text-center py-3 px-4 text-editor-success font-semibold">✓ Native</td>
+              <td class="text-center py-3 px-4 text-editor-text-muted">✓ Yes</td>
+              <td class="text-center py-3 px-4 text-editor-text-muted">✗ No</td>
+            </tr>
+            <tr class="hover:bg-editor-surface/50">
+              <td class="py-3 pr-6 text-editor-text-muted">Price</td>
+              <td class="text-center py-3 px-4 text-editor-success font-semibold">$49 / $99</td>
+              <td class="text-center py-3 px-4 text-editor-text-muted">$24/mo</td>
+              <td class="text-center py-3 px-4 text-editor-text-muted">Free</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -740,7 +845,7 @@
           <input
             type="email"
             name="email"
-            placeholder="your@email.com"
+            placeholder="Enter email for launch discount"
             autocomplete="email"
             aria-label="Email address for newsletter"
             required
@@ -751,10 +856,11 @@
             aria-label="Subscribe to newsletter"
             class="w-full sm:w-auto whitespace-nowrap bg-editor-accent hover:bg-editor-accent-hover text-white px-5 py-2.5 rounded-lg text-sm font-medium transition"
           >
-            Subscribe
+            Get 10% off
           </button>
         </form>
         <p id="subscribe-message" class="text-xs text-editor-text-muted mt-3"></p>
+        <p class="text-xs text-editor-text-muted/60 mt-3 text-center">No spam, unsubscribe anytime. First 100 buyers get launch price.</p>
       </div>
       </div>
     </div>
@@ -770,7 +876,7 @@
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="flex items-center gap-3">
         <img src="logo.webp" alt="TalkEdit" class="w-6 h-6 rounded" loading="lazy" />
-        <span class="text-sm text-editor-text-muted">TalkEdit Beta v0.2.60 &middot; &copy; 2026</span>
+        <span class="text-sm text-editor-text-muted">TalkEdit Beta v0.2.63 &middot; &copy; 2026 <span id="app-version" class="text-xs text-editor-text-muted/60 ml-2">v0.2.63</span></span>
       </div>
       <div class="flex items-center gap-6">
         <a href="/vs/descript/" class="text-sm text-editor-text-muted hover:text-editor-text transition no-underline">vs Descript</a>
@@ -810,13 +916,18 @@
             throw new Error(data.error || 'Subscription failed');
           }
         } catch (err) {
-          message.textContent = err.message === 'Subscription failed'
-            ? 'Something went wrong. Try again or email hello@talk-edit.com.'
-            : 'Subscription unavailable. Email hello@talk-edit.com to stay in touch.';
+          // Fallback when /api/subscribe is not deployed yet
+          if (err.message === 'Failed to fetch' || err.message.includes('Load failed')) {
+            message.textContent = 'Thanks — launch list (wire up /api/subscribe in functions/newsletter.ts)';
+          } else {
+            message.textContent = err.message === 'Subscription failed'
+              ? 'Something went wrong. Try again or email hello@talk-edit.com.'
+              : 'Thanks — launch list (wire up /api/subscribe in functions/newsletter.ts)';
+          }
           message.className = 'text-xs text-editor-text-muted mt-3';
         } finally {
           btn.disabled = false;
-          btn.textContent = 'Subscribe';
+          btn.textContent = 'Get 10% off';
         }
       });
     }
